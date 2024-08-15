@@ -3,7 +3,6 @@ import Navbar from "../components/ICTPortal/Navbar";
 import Banner from "../components/ICTPortal/Banner";
 import GovementServices from "../components/ICTPortal/GovementServices";
 import Helpline from "../components/ICTPortal/Helpline";
-import ImportantLinks from "../components/ICTPortal/importantLinks";
 import Footer from "../components/ICTPortal/Footer";
 import ImportantVideo from "../components/ICTPortal/ImportantVideo";
 
@@ -36,7 +35,7 @@ export default function ICTPortal() {
       <GovementServices />
 
       {/* important link section  */}
-      <ImportantLinks />
+      {/* <ImportantLinks/> */}
 
       <ImportantVideo />
 
