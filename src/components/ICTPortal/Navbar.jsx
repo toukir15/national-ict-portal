@@ -198,7 +198,7 @@ export default function Navbar() {
                       {nestedOption.options.map((option, i) => (
                         <li
                           key={i}
-                          className="py-1 hover:text-green-500 hover:translate-x-2 transition duration-200 cursor-pointer"
+                          className="py-1 text-gray-600 text-sm hover:text-green-500 hover:translate-x-2 transition duration-200 cursor-pointer"
                         >
                           {option}
                         </li>

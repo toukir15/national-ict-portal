@@ -3,12 +3,30 @@ import eDirectory from "../../../public/e-directory.jpg";
 import internal from "../../../public/internal.jpg";
 import mygov from "../../../public/mygov.jpg";
 import discount from "../../../public/discount.jpg";
+import { useState } from "react";
 
 export default function ImportantLinks() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    setMousePosition({ x, y });
+  };
+
   return (
-    <section className="py-20">
+    <section className="py-40">
       <div className="container mx-auto flex">
-        <div className="border w-[60%] rounded-2xl flex">
+        <div
+          onMouseMove={(e) => handleMouseMove(e)}
+          style={{
+            background: ` radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(214, 244, 224, 0.9), transparent 70%)`,
+            transition: "background 0.2s ease",
+          }}
+          className="border w-[60%] rounded-2xl shadow-lg flex"
+        >
           <div className="flex gap-2 w-[70%] px-6 border-r">
             <div className="py-20 w-1/2">
               <h6 className="text-xl font-medium mb-2">Internal eServices</h6>
@@ -147,10 +165,26 @@ export default function ImportantLinks() {
         </div>
         {/* Images displayed below the previous content */}
         <div className="px-8 space-y-3 w-[40%]">
-          <img src={eDirectory} className=" z-10 mb-4" alt="eDirectory" />
-          <img src={internal} className="" alt="Internal Services" />
-          <img src={mygov} className="" alt="My gov" />
-          <img src={discount} className="" alt="My gov" />
+          <img
+            src={eDirectory}
+            className="border rounded-xl shadow-lg cursor-pointer"
+            alt="eDirectory"
+          />
+          <img
+            src={internal}
+            className="border rounded-xl shadow-lg cursor-pointer"
+            alt="Internal Services"
+          />
+          <img
+            src={mygov}
+            className="border rounded-xl shadow-lg cursor-pointer"
+            alt="My gov"
+          />
+          <img
+            src={discount}
+            className="border rounded-xl shadow-lg cursor-pointer"
+            alt="My gov"
+          />
         </div>
       </div>
     </section>

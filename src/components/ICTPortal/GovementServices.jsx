@@ -17,7 +17,6 @@ import { FaDiceD6 } from "react-icons/fa6";
 import { useState } from "react";
 
 export default function GovementServices() {
-  const [hoverBorder, setHoverBorder] = useState({});
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [activeCard, setActiveCard] = useState(null);
   const handleMouseMove = (e, index) => {
@@ -25,26 +24,12 @@ export default function GovementServices() {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    const borderThreshold = 100; // The distance from the edge where the border should be visible
-
-    const showLeftBorder = x < borderThreshold;
-    const showRightBorder = rect.width - x < borderThreshold;
-    const showTopBorder = y < borderThreshold;
-    const showBottomBorder = rect.height - y < borderThreshold;
 
     setMousePosition({ x, y });
     setActiveCard(index);
-    setHoverBorder({
-      left: showLeftBorder,
-      right: showRightBorder,
-      top: showTopBorder,
-      bottom: showBottomBorder,
-      index: index,
-    });
   };
 
   const handleMouseLeave = () => {
-    setHoverBorder({});
     setActiveCard(null);
   };
 
@@ -202,42 +187,48 @@ export default function GovementServices() {
   ];
 
   return (
-    <section className="bg-gray-100 py-40">
-      <div className="container mx-auto grid grid-cols-4 gap-8">
-        {servicesData.map((service, index) => {
-          return (
-            <div
-              key={index}
-              className="bg-white card p-8 rounded-2xl relative overflow-hidden border-r-4 border-green-500"
-              onMouseMove={(e) => handleMouseMove(e, index)}
-              onMouseLeave={handleMouseLeave}
-              style={{
-                background:
-                  activeCard === index
-                    ? `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(214, 244, 224, 0.9), transparent 70%)`
-                    : "transparent",
-                transition: "background 0.2s ease",
-              }}
-            >
-              <h4 className="text-2xl font-medium">{service.title}</h4>
-              <div className="gap-8 items-center pt-4">
-                <service.icon className="text-[100px] text-gray-800 mb-4" />
-                {service.options.map((option, idx) => {
-                  return (
-                    <div key={idx} className="space-y-2">
-                      <button className="flex mt-1 text-start gap-1 hover:text-green-500 hover:translate-x-2 transition duration-200">
-                        <span className="relative top-1">
-                          <IoMdPlay />
-                        </span>
-                        <span>{option}</span>
-                      </button>
-                    </div>
-                  );
-                })}
+    <section className="bg-white mt-24 ">
+      <div className="container mx-auto">
+        <h2 className="text-4xl font-medium mb-16">
+          Govement Services & <br /> Important{" "}
+          <span className="text-green-500">Laws/Notices</span>
+        </h2>
+        <div className="grid grid-cols-4 gap-8">
+          {servicesData.map((service, index) => {
+            return (
+              <div
+                key={index}
+                className="bg-gray-100 shadow-xl card p-8 rounded-2xl relative overflow-hidden border-r-4 border-green-500"
+                onMouseMove={(e) => handleMouseMove(e, index)}
+                onMouseLeave={handleMouseLeave}
+                style={{
+                  background:
+                    activeCard === index
+                      ? `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(214, 244, 224, 0.9), transparent 70%)`
+                      : "radial-gradient(circle at 0px 0px, rgba(214, 244, 224, 0.9), transparent 70%)",
+                  transition: "background 0.2s ease",
+                }}
+              >
+                <h4 className="text-2xl font-medium">{service.title}</h4>
+                <div className="gap-8 items-center pt-4">
+                  <service.icon className="text-[100px] text-gray-800 mb-4" />
+                  {service.options.map((option, idx) => {
+                    return (
+                      <div key={idx} className="space-y-2">
+                        <button className="flex mt-1 text-start gap-1 hover:text-green-500 hover:translate-x-2 transition duration-200">
+                          <span className="relative top-1">
+                            <IoMdPlay />
+                          </span>
+                          <span>{option}</span>
+                        </button>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );

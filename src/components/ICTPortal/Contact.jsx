@@ -8,13 +8,17 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 import { TiWeatherCloudy } from "react-icons/ti";
+import national from "../../assets/national.mp3";
 
 export default function Contact() {
   return (
     <div>
       <div className="container mx-auto  flex justify-between pl-6 ">
-        <div className="py-4">
+        <div className="py-4 flex items-center gap-12">
           <img src={logo} alt="" />
+          <div className="flex gap-2 items-center ">
+            <audio controls src={national}></audio>
+          </div>
         </div>
         <div className="flex justify-between  gap-4">
           <div className="flex gap-5 text-[22px] text-green-500 py-4 items-center">
@@ -51,7 +55,7 @@ export default function Contact() {
               <FaWhatsapp />
             </button>
           </div>
-          <div className="bg-[#26c44b71] h-auto flex items-center px-4 gap-10">
+          <div className="bg-gray-200 h-auto flex items-center px-4 gap-10">
             <div>
               <h3 className="text-2xl font-medium mb-1">Wednesday</h3>
               <h6>14 Aug 2024</h6>
