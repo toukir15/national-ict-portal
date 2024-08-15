@@ -1,3 +1,9 @@
+import ICTPortal from "./pages/ICTPortal";
+
 export default function App() {
-  return <div>app</div>;
+  return (
+    <div className="">
+      <ICTPortal />
+    </div>
+  );
 }
