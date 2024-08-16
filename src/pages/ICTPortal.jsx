@@ -5,7 +5,7 @@ import GovementServices from "../components/ICTPortal/GovementServices";
 import Helpline from "../components/ICTPortal/Helpline";
 import Footer from "../components/ICTPortal/Footer";
 import ImportantLink from "../components/ICTPortal/importantLink";
-import { ImportantVideo } from "../components/ICTPortal/ImportantVideo";
+// import { ImportantVideo } from "../components/ICTPortal/ImportantVideo";
 import Officials from "../components/ICTPortal/Officials";
 
 export default function ICTPortal() {
@@ -42,7 +42,7 @@ export default function ICTPortal() {
       {/* important link section  */}
       <ImportantLink />
 
-      <ImportantVideo />
+      {/* <ImportantVideo /> */}
       {/* footer  */}
       <Footer />
     </div>
