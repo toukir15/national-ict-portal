@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .background-image {
-  background-image: url("../public/background.png");
+  background-image: url("/background.png");
   background-repeat: no-repeat;
   background-size: cover; /* Change contain to cover */
   background-position: center;
@@ -14,7 +14,4 @@
 }
 .notice {
   background-color: #f3f4f6cc !important;
-}
-.important-video {
-  background-color: rgba(227, 227, 227, 0.767) !important;
 }

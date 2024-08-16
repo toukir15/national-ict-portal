@@ -4,8 +4,9 @@ import Banner from "../components/ICTPortal/Banner";
 import GovementServices from "../components/ICTPortal/GovementServices";
 import Helpline from "../components/ICTPortal/Helpline";
 import Footer from "../components/ICTPortal/Footer";
-import ImportantVideo from "../components/ICTPortal/ImportantVideo";
 import ImportantLink from "../components/ICTPortal/importantLink";
+import { ImportantVideo } from "../components/ICTPortal/ImportantVideo";
+import Officials from "../components/ICTPortal/Officials";
 
 export default function ICTPortal() {
   return (
@@ -32,6 +33,9 @@ export default function ICTPortal() {
       {/* helpLine  */}
       <Helpline />
 
+      {/* officials  */}
+      <Officials />
+
       {/* section 1  */}
       <GovementServices />
 
@@ -39,7 +43,6 @@ export default function ICTPortal() {
       <ImportantLink />
 
       <ImportantVideo />
-
       {/* footer  */}
       <Footer />
     </div>

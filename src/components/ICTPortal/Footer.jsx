@@ -1,5 +1,5 @@
-import logo from "../../../public/logo.png";
-import technical from "../../../public/technical.png";
+import logo from "/logo.png";
+import technical from "/technical.png";
 export default function Footer() {
   return (
     <div className="bg-[#333333]">

@@ -21,37 +21,31 @@ export default function Contact() {
           </div>
         </div>
         <div className="flex justify-between  gap-4">
-          <div className="flex gap-5 text-[22px] text-green-500 py-4 items-center">
-            <button>
+          <div className="flex gap-12 text-[22px] text-green-500 py-4 items-center">
+            <button className="hover:text-green-600 transition duratiion-200">
               <FaFacebookSquare />
             </button>
-            <div className="border border-[#f0f0f089] h-10" />
-            <button>
+            <button className="hover:text-green-600 transition duratiion-200">
               <FaYoutube />
             </button>
-            <div className="border border-[#f0f0f089] h-10" />
 
-            <button>
+            <button className="hover:text-green-600 transition duratiion-200">
               <FaXTwitter />
             </button>
-            <div className="border border-[#f0f0f089] h-10" />
 
-            <button>
+            <button className="hover:text-green-600 transition duratiion-200">
               <FaLinkedinIn />
             </button>
-            <div className="border border-[#f0f0f089] h-10" />
 
-            <button>
+            <button className="hover:text-green-600 transition duratiion-200">
               <FaInstagram />
             </button>
-            <div className="border border-[#f0f0f089] h-10" />
 
-            <button>
+            <button className="hover:text-green-600 transition duratiion-200">
               <FaTelegramPlane />
             </button>
-            <div className="border border-[#f0f0f089] h-10" />
 
-            <button>
+            <button className="hover:text-green-600 transition duratiion-200">
               <FaWhatsapp />
             </button>
           </div>

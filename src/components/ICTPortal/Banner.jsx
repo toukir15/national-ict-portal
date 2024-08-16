@@ -61,10 +61,10 @@ export default function Banner() {
               : "none",
             transition: "background 0.2s ease",
           }}
-          className="bg-[#f3f4f6ec] notice  p-8 w-full lg:w-[60%] rounded-lg "
+          className="bg-[#f3f4f6ec] notice  p-4 lg:p-8 w-full lg:w-[60%] rounded-lg "
         >
           <div className="flex items-center mb-2 justify-between">
-            <h4 className="text-3xl mb-4 font-medium flex gap-2 items-center">
+            <h4 className="text-xl lg:text-3xl mb-4 font-medium flex gap-2 items-center">
               <span className="relative top-[3px]">
                 <BsPinFill />
               </span>
@@ -74,21 +74,21 @@ export default function Banner() {
               See More
             </button>
           </div>
-          <div className="text-gray-800">
-            <button className="border-t border-gray-300 py-5 px-2 block hover:translate-x-3 transition duration-200 w-full text-start hover:text-green-500">
+          <div className="text-gray-800 ">
+            <button className="border-t border-gray-300 py-3 lg:py-5 px-2 block hover:translate-x-3 transition duration-200 w-full text-start hover:text-green-500">
               অফিস আদেশ (দায়িত্ব বণ্টন)
             </button>
-            <button className="border-t border-gray-300 py-5 px-2 block hover:translate-x-3 transition duration-200 w-full text-start hover:text-green-500">
+            <button className="border-t border-gray-300 py-3 lg:py-5 px-2 block hover:translate-x-3 transition duration-200 w-full text-start hover:text-green-500">
               ২০২৪-২০২৫ অর্থবছরের বিজ্ঞপ্তি
             </button>
-            <button className="border-t border-gray-300 py-5 px-2 block hover:translate-x-3 transition duration-200 w-full text-start hover:text-green-500">
+            <button className="border-t border-gray-300 py-3 lg:py-5 px-2 block hover:translate-x-3 transition duration-200 w-full text-start hover:text-green-500">
               e-Tender For “Procurement of Food and Refreshment for Aspire to
               Innovate (a2i) Progr...
             </button>
-            <button className="border-t border-gray-300 py-5 px-2 block hover:translate-x-3 transition duration-200 w-full text-start hover:text-green-500">
+            <button className="border-t border-gray-300 py-3 lg:py-5 px-2 block hover:translate-x-3 transition duration-200 w-full text-start hover:text-green-500">
               অফিস আদেশ (অবমুক্তি, জনাব নাসরিন সুলতানা, উপসচিব)
             </button>
-            <button className="border-t border-gray-300 py-5 px-2 block hover:translate-x-3 transition duration-200 w-full text-start hover:text-green-500">
+            <button className="border-t border-gray-300 py-3 lg:py-5 px-2 block hover:translate-x-3 transition duration-200 w-full text-start hover:text-green-500">
               অফিস আদেশ (অবমুক্তি, জনাব নাসরিন সুলতানা, উপসচিব)
             </button>
           </div>

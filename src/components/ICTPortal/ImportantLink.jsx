@@ -1,8 +1,8 @@
 import { FaArrowRightLong } from "react-icons/fa6";
-import eDirectory from "../../../public/e-directory.jpg";
-import internal from "../../../public/internal.jpg";
-import mygov from "../../../public/mygov.jpg";
-import discount from "../../../public/discount.jpg";
+import eDirectory from "/e-directory.jpg";
+import internal from "/internal.jpg";
+import mygov from "/mygov.jpg";
+import discount from "/discount.jpg";
 import { useState } from "react";
 
 export default function ImportantLink() {
@@ -29,7 +29,7 @@ export default function ImportantLink() {
             background: ` radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(214, 244, 224, 0.9), transparent 70%)`,
             transition: "background 0.2s ease",
           }}
-          className="border w-full lg:w-[60%] rounded-2xl shadow-lg lg:flex"
+          className="border w-full lg:w-[60%] rounded-2xl lg:shadow-lg lg:flex"
         >
           <div className="lg:flex gap-2 lg:w-[70%] px-6 lg:border-r">
             <div className="lg:py-20 py-6 w-full lg:w-1/2">
@@ -131,7 +131,7 @@ export default function ImportantLink() {
               <table className="min-w-full bg-white">
                 <tbody>
                   <tr>
-                    <td className="px-2 pr-52 lg:pr-20 py-3 border-t border-gray-200 text-start">
+                    <td className="px-2 pr-40 lg:pr-20 py-3 border-t border-gray-200 text-start">
                       Today
                     </td>
                     <td className="px-2 py-3 border-t border-gray-200 text-right">
@@ -139,7 +139,7 @@ export default function ImportantLink() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="px-2 pr-52 lg:pr-20 py-3 border-t border-gray-200 text-start">
+                    <td className="px-2 pr-40 lg:pr-20 py-3 border-t border-gray-200 text-start">
                       Yesterday
                     </td>
                     <td className="px-2 py-3 border-t border-gray-200 text-right">
@@ -147,7 +147,7 @@ export default function ImportantLink() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="px-2 pr-52 lg:pr-20 py-3 border-t border-gray-200 text-start">
+                    <td className="px-2 pr-40 lg:pr-20 py-3 border-t border-gray-200 text-start">
                       All
                     </td>
                     <td className="px-2 py-3 border-t border-gray-200 text-right">
@@ -155,7 +155,7 @@ export default function ImportantLink() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="px-2 pr-52 lg:pr-20 py-3 border-t border-gray-200 text-start">
+                    <td className="px-2 pr-40 lg:pr-20 py-3 border-t border-gray-200 text-start">
                       Online
                     </td>
                     <td className="px-2 py-1 border-t border-gray-200 text-right">
