@@ -49,7 +49,8 @@ export default function Banner() {
           Government of the People&apos;s Republic of Bangladesh
         </h4>
       </div>
-      <div className="container mx-auto mt-12 flex gap-8">
+      <div className="container mx-auto mt-12 flex gap-0 lg:gap-8 px-3">
+        {/* notice board  */}
         <div
           onMouseMove={(e) => hoverActive && handleMouseMove(e)}
           onMouseEnter={handleMouseEnter}
@@ -60,7 +61,7 @@ export default function Banner() {
               : "none",
             transition: "background 0.2s ease",
           }}
-          className="bg-[#f3f4f6ec] notice  p-8 w-[60%] rounded-lg "
+          className="bg-[#f3f4f6ec] notice  p-8 w-full lg:w-[60%] rounded-lg "
         >
           <div className="flex items-center mb-2 justify-between">
             <h4 className="text-3xl mb-4 font-medium flex gap-2 items-center">
@@ -94,28 +95,30 @@ export default function Banner() {
         </div>
         <div className="flex gap-8"></div>
       </div>
-      <div className=" absolute bottom-5 right-20 flex gap-10">
-        {officialsData.map((official) => {
-          return (
-            <div
-              key={official.name}
-              className="w-fit border p-4 rounded bg-white"
-            >
-              <div>
-                <img className={`w-[200px]`} src={official.img} alt="" />
+      <div className="hidden lg:block">
+        <div className=" absolute bottom-5 right-20 flex gap-10">
+          {officialsData.map((official) => {
+            return (
+              <div
+                key={official.name}
+                className="w-fit border p-4 rounded bg-white"
+              >
+                <div>
+                  <img className={`w-[200px]`} src={official.img} alt="" />
+                </div>
+                <p className="text-center text-lg mt-1 font-medium">
+                  {official.name}
+                </p>
+                <p className="text-center text-gray-700">
+                  {official.degignation}
+                </p>
+                <button className="bg-green-500 hover:bg-green-600 transition duration-200 w-full py-1 rounded mt-2 text-white font-medium">
+                  More
+                </button>
               </div>
-              <p className="text-center text-lg mt-1 font-medium">
-                {official.name}
-              </p>
-              <p className="text-center text-gray-700">
-                {official.degignation}
-              </p>
-              <button className="bg-green-500 hover:bg-green-600 transition duration-200 w-full py-1 rounded mt-2 text-white font-medium">
-                More
-              </button>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );

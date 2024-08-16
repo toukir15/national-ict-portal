@@ -2,6 +2,8 @@ import { useState } from "react";
 
 export default function Navbar() {
   const [hoveredNavLink, setHoveredNavLink] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navbarOptions = [
     {
       name: "home",
@@ -161,10 +163,42 @@ export default function Navbar() {
       ],
     },
   ];
+
   return (
-    <nav className="relative">
-      <div className="bg-green-500">
-        <div className="container mx-auto flex justify-between items-center">
+    <nav className="relative bg-green-500">
+      <div className="container mx-auto flex justify-between items-center p-4 lg:p-0">
+        {/* Logo or Branding */}
+        <div className="text-white text-2xl font-bold lg:hidden ">
+          ICT Division
+        </div>
+
+        {/* Mobile menu button */}
+        <button
+          className="lg:hidden text-white"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d={
+                isMobileMenuOpen
+                  ? "M6 18L18 6M6 6l12 12"
+                  : "M4 6h16M4 12h16m-7 6h7"
+              }
+            />
+          </svg>
+        </button>
+
+        {/* Full Navbar for larger screens */}
+        <div className="hidden lg:flex space-x-4">
           {navbarOptions.map((navbarOption, key) => (
             <div key={key} className="relative">
               <button
@@ -172,11 +206,12 @@ export default function Navbar() {
                   setHoveredNavLink(navbarOption?.navLinkName)
                 }
                 onMouseLeave={() => setHoveredNavLink(null)}
-                className={`py-5 text-lg font-medium transition duration-150 text-white px-10 bg-[${navbarOption.buttonColor}] hover:bg-green-600`}
+                className={`py-7  font-medium transition duration-150 text-white px-8 bg-[${navbarOption.buttonColor}] hover:bg-green-600`}
               >
                 {navbarOption.navLinkName}
               </button>
 
+              {/* Dropdown Menu */}
               <div
                 onMouseEnter={() =>
                   setHoveredNavLink(navbarOption?.navLinkName)
@@ -199,6 +234,61 @@ export default function Navbar() {
                         <li
                           key={i}
                           className="py-1 text-gray-600 text-sm hover:text-green-500 hover:translate-x-2 transition duration-200 cursor-pointer"
+                        >
+                          {option}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile Navbar */}
+        <div
+          className={`lg:hidden absolute top-full left-0 w-full bg-white p-4 shadow-lg z-50 ${
+            isMobileMenuOpen ? "block" : "hidden"
+          }`}
+        >
+          {navbarOptions.map((navbarOption, key) => (
+            <div key={key} className="relative">
+              <button
+                onClick={() =>
+                  setHoveredNavLink(
+                    hoveredNavLink === navbarOption?.navLinkName
+                      ? null
+                      : navbarOption?.navLinkName
+                  )
+                }
+                className={`w-full text-left py-2 text-lg font-medium text-black bg-gray-100 mb-2 px-4 rounded-md ${
+                  hoveredNavLink === navbarOption?.navLinkName
+                    ? "bg-gray-200"
+                    : ""
+                }`}
+              >
+                {navbarOption.navLinkName}
+              </button>
+
+              {/* Dropdown Menu */}
+              <div
+                className={`${
+                  hoveredNavLink === navbarOption?.navLinkName
+                    ? "block"
+                    : "hidden"
+                } pl-4`}
+              >
+                {navbarOption.nestedOptions?.map((nestedOption, index) => (
+                  <div key={index} className="py-2">
+                    <h4 className="font-semibold">
+                      {nestedOption.nestedOptionName}
+                    </h4>
+                    <ul>
+                      {nestedOption.options.map((option, i) => (
+                        <li
+                          key={i}
+                          className="py-1 text-sm text-gray-700 hover:text-green-500 transition duration-200 cursor-pointer"
                         >
                           {option}
                         </li>

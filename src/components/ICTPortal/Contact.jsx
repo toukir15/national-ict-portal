@@ -12,7 +12,7 @@ import national from "../../assets/national.mp3";
 
 export default function Contact() {
   return (
-    <div>
+    <div className="hidden lg:block">
       <div className="container mx-auto  flex justify-between pl-6 ">
         <div className="py-4 flex items-center gap-12">
           <img src={logo} alt="" />

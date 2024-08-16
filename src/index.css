@@ -13,5 +13,8 @@
   background-color: white !important;
 }
 .notice {
-  background-color: white !important;
+  background-color: #f3f4f6cc !important;
+}
+.important-video {
+  background-color: rgba(227, 227, 227, 0.767) !important;
 }

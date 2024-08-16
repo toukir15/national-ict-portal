@@ -187,13 +187,13 @@ export default function GovementServices() {
   ];
 
   return (
-    <section className="bg-white mt-24 ">
+    <section className="bg-white mt-10 lg:mt-24 px-3 lg:px-0 ">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-medium mb-16">
+        <h2 className="text-3xl lg:text-4xl font-medium mb-10 lg:mb-16 ">
           Govement Services & <br /> Important{" "}
           <span className="text-green-500">Laws/Notices</span>
         </h2>
-        <div className="grid grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {servicesData.map((service, index) => {
             return (
               <div
@@ -211,7 +211,7 @@ export default function GovementServices() {
               >
                 <h4 className="text-2xl font-medium">{service.title}</h4>
                 <div className="gap-8 items-center pt-4">
-                  <service.icon className="text-[100px] text-gray-800 mb-4" />
+                  <service.icon className="lg:text-[100px] text-[80px] text-gray-800 mb-4" />
                   {service.options.map((option, idx) => {
                     return (
                       <div key={idx} className="space-y-2">

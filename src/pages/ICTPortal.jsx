@@ -5,12 +5,13 @@ import GovementServices from "../components/ICTPortal/GovementServices";
 import Helpline from "../components/ICTPortal/Helpline";
 import Footer from "../components/ICTPortal/Footer";
 import ImportantVideo from "../components/ICTPortal/ImportantVideo";
+import ImportantLink from "../components/ICTPortal/importantLink";
 
 export default function ICTPortal() {
   return (
     <div>
       {/* top header  */}
-      <div className="bg-[#F0F0F0] text-sm py-2">
+      <div className="bg-[#F0F0F0] text-sm py-2 hidden lg:block">
         <div className="container mx-auto px-6 flex justify-between">
           <p>Bangladesh National Portal</p>
           <button className="underline text-green-500 font-medium hover:text-green-600">
@@ -35,7 +36,7 @@ export default function ICTPortal() {
       <GovementServices />
 
       {/* important link section  */}
-      {/* <ImportantLinks/> */}
+      <ImportantLink />
 
       <ImportantVideo />
 

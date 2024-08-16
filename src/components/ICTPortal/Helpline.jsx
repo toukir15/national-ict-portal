@@ -44,7 +44,7 @@ const helplinesData = [
 export default function Helpline() {
   return (
     <>
-      <section className="bg-[#F1FBF5] lg:py-8  ">
+      <section className="bg-[#F1FBF5] py-4 lg:py-8  ">
         <div className={`flex flex-wrap gap-10 items-center justify-center`}>
           <Marquee speed={80}>
             {helplinesData.map((helpline, i) => (

@@ -33,9 +33,9 @@ export default function ImportantVideo() {
           : "none",
         transition: "background 0.2s ease",
       }}
-      className="flex gap-16 mb-40 py-20 px-12 bg-[#F4FCF7] rounded-2xl border shadow-sm container mx-auto"
+      className="lg:flex gap-16 mb-40 py-10 lg:py-20 px-4 lg:px-12 important-video rounded-2xl border shadow-sm container mx-auto"
     >
-      <div className="w-1/2">
+      <div className="lg:w-1/2">
         <div className="flex items-center gap-3 mb-4">
           <img className="w-8" src={logo} alt="" />
           <h2>বন্যার সময় কি করণীয়</h2>
@@ -46,7 +46,7 @@ export default function ImportantVideo() {
           src={bonna}
         ></video>
       </div>
-      <div className="w-1/2">
+      <div className="lg:w-1/2 mt-8 lg:mt-0">
         <div className="flex items-center gap-3 mb-4">
           <img className="w-8" src={logo} alt="" />
           <h2>ডেঙ্গু প্রতিরোধে করণীয়</h2>

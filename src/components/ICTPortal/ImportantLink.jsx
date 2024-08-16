@@ -5,7 +5,7 @@ import mygov from "../../../public/mygov.jpg";
 import discount from "../../../public/discount.jpg";
 import { useState } from "react";
 
-export default function ImportantLinks() {
+export default function ImportantLink() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const handleMouseMove = (e) => {
     const card = e.currentTarget;
@@ -17,18 +17,22 @@ export default function ImportantLinks() {
   };
 
   return (
-    <section className="py-40">
-      <div className="container mx-auto flex">
+    <section className="lg:py-36 py-16 container mx-auto px-4 lg:px-0">
+      <h2 className="text-3xl lg:text-4xl font-medium mb-8 lg:mb-16 ">
+        Important Links & <br /> Essential{" "}
+        <span className="text-green-500">Info</span>
+      </h2>
+      <div className=" lg:flex">
         <div
           onMouseMove={(e) => handleMouseMove(e)}
           style={{
             background: ` radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(214, 244, 224, 0.9), transparent 70%)`,
             transition: "background 0.2s ease",
           }}
-          className="border w-[60%] rounded-2xl shadow-lg flex"
+          className="border w-full lg:w-[60%] rounded-2xl shadow-lg lg:flex"
         >
-          <div className="flex gap-2 w-[70%] px-6 border-r">
-            <div className="py-20 w-1/2">
+          <div className="lg:flex gap-2 lg:w-[70%] px-6 lg:border-r">
+            <div className="lg:py-20 py-6 w-full lg:w-1/2">
               <h6 className="text-xl font-medium mb-2">Internal eServices</h6>
               <ul className="space-y-[2px] text-gray-700">
                 <li className="group flex items-center gap-2 w-fit cursor-pointer">
@@ -73,7 +77,7 @@ export default function ImportantLinks() {
                 <FaArrowRightLong className="relative top-[2px]" />
               </button>
             </div>
-            <div className="py-20 w-1/2">
+            <div className="lg:py-20 py-6 w-full lg:w-1/2">
               <h6 className="text-xl font-medium mb-2">Important Links</h6>
               <ul className="space-y-[2px] text-gray-700">
                 <li className="group flex items-center gap-2 w-fit cursor-pointer">
@@ -119,7 +123,7 @@ export default function ImportantLinks() {
               </button>
             </div>
           </div>
-          <div className="w-[30%] flex justify-center items-center px-20">
+          <div className="lg:w-[30%] flex justify-center items-center lg:px-20 pb-8 lg:pb-0">
             <div className="inline-block border border-gray-300 h-fit rounded-md shadow-md text-center">
               <div className="bg-green-200 text-gray-800 font-bold py-1 w-full">
                 VisitorCounter
@@ -127,7 +131,7 @@ export default function ImportantLinks() {
               <table className="min-w-full bg-white">
                 <tbody>
                   <tr>
-                    <td className="px-2 pr-20 py-3 border-t border-gray-200 text-start">
+                    <td className="px-2 pr-52 lg:pr-20 py-3 border-t border-gray-200 text-start">
                       Today
                     </td>
                     <td className="px-2 py-3 border-t border-gray-200 text-right">
@@ -135,7 +139,7 @@ export default function ImportantLinks() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="px-2 pr-20 py-3 border-t border-gray-200 text-start">
+                    <td className="px-2 pr-52 lg:pr-20 py-3 border-t border-gray-200 text-start">
                       Yesterday
                     </td>
                     <td className="px-2 py-3 border-t border-gray-200 text-right">
@@ -143,7 +147,7 @@ export default function ImportantLinks() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="px-2 pr-20 py-3 border-t border-gray-200 text-start">
+                    <td className="px-2 pr-52 lg:pr-20 py-3 border-t border-gray-200 text-start">
                       All
                     </td>
                     <td className="px-2 py-3 border-t border-gray-200 text-right">
@@ -151,7 +155,7 @@ export default function ImportantLinks() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="px-2 pr-20 py-3 border-t border-gray-200 text-start">
+                    <td className="px-2 pr-52 lg:pr-20 py-3 border-t border-gray-200 text-start">
                       Online
                     </td>
                     <td className="px-2 py-1 border-t border-gray-200 text-right">
@@ -164,7 +168,7 @@ export default function ImportantLinks() {
           </div>
         </div>
         {/* Images displayed below the previous content */}
-        <div className="px-8 space-y-3 w-[40%]">
+        <div className="px-8 space-y-3 mt-10 lg:mt-0 lg:w-[40%]">
           <img
             src={eDirectory}
             className="border rounded-xl shadow-lg cursor-pointer"
