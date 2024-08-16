@@ -49,7 +49,7 @@ export default function Banner() {
           Government of the People&apos;s Republic of Bangladesh
         </h4>
       </div>
-      <div className="container mx-auto mt-12 flex gap-0 lg:gap-8 px-3">
+      <div className="container mx-auto mt-12 md:mt-20 lg:mt-12 md:px-16 lg:px-0 flex gap-0 lg:gap-8 px-3">
         {/* notice board  */}
         <div
           onMouseMove={(e) => hoverActive && handleMouseMove(e)}

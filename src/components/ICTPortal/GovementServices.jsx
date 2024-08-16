@@ -193,7 +193,7 @@ export default function GovementServices() {
           Govement Services & <br /> Important{" "}
           <span className="text-green-500">Laws/Notices</span>
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {servicesData.map((service, index) => {
             return (
               <div
