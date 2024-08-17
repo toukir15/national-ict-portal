@@ -78,7 +78,7 @@ export const ImportantVideo = () => {
                 <img className="w-8" src={logo} alt="" />
                 <h1>ডেঙ্গু প্রতিরোধে করণীয়</h1>
               </div>
-              <div className="mt-8 h-[250px] sm:h-[400px] md:h-[670px] w-full">
+              <div className="mt-8 h-[250px] sm:h-[400px] md:h-[550px] w-full">
                 <ReactPlayer
                   height={"100%"}
                   width={"100%"}
