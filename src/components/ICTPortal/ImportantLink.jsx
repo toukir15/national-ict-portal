@@ -172,22 +172,22 @@ export default function ImportantLink() {
           <div className="px-8 space-y-3 mt-10 lg:mt-0 lg:w-[40%]">
             <img
               src={eDirectory}
-              className="border rounded-xl shadow-lg cursor-pointer"
+              className="border hover:scale-105 transition duration-200 rounded-xl shadow-lg cursor-pointer"
               alt="eDirectory"
             />
             <img
               src={internal}
-              className="border rounded-xl shadow-lg cursor-pointer"
+              className="border hover:scale-105 transition duration-200 rounded-xl shadow-lg cursor-pointer"
               alt="Internal Services"
             />
             <img
               src={mygov}
-              className="border rounded-xl shadow-lg cursor-pointer"
+              className="border hover:scale-105 transition duration-200 rounded-xl shadow-lg cursor-pointer"
               alt="My gov"
             />
             <img
               src={discount}
-              className="border rounded-xl shadow-lg cursor-pointer"
+              className="border hover:scale-105 transition duration-200 rounded-xl shadow-lg cursor-pointer"
               alt="My gov"
             />
           </div>

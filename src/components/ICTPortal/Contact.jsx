@@ -57,7 +57,13 @@ export default function Contact() {
             <div>
               <div className="flex  items-center gap-2 mb-1">
                 <TiWeatherCloudy className="text-xl" />
-                <h3 className="text-xl font-medium">25 - 30 C</h3>
+                <h3 className="text-xl font-medium">
+                  25 - 30{" "}
+                  <p className="inline-block ml-2 relative">
+                    <span> C</span>
+                    <p className="w-[6px] h-[8px] absolute top-2 -left-[6px] border-2 border-black rounded"></p>
+                  </p>
+                </h3>
               </div>
               <h6 className="text-gray-800">24Hr PSI 54-59PSI</h6>
             </div>
