@@ -15,10 +15,12 @@ import { SiSaltproject } from "react-icons/si";
 import { SiNationalrail } from "react-icons/si";
 import { FaDiceD6 } from "react-icons/fa6";
 import { useState } from "react";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function GovementServices() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [activeCard, setActiveCard] = useState(null);
+  const [cardShowQuantity, setCardShowQuantity] = useState(8);
   const handleMouseMove = (e, index) => {
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
@@ -31,6 +33,10 @@ export default function GovementServices() {
 
   const handleMouseLeave = () => {
     setActiveCard(null);
+  };
+
+  const handleShowMore = (quantity) => {
+    setCardShowQuantity(quantity);
   };
 
   const servicesData = [
@@ -187,14 +193,14 @@ export default function GovementServices() {
   ];
 
   return (
-    <section className="bg-white mt-10 lg:mt-24 px-3 lg:px-0 ">
+    <section className="bg-white mt-10 lg:my-24  px-3 lg:px-0 ">
       <div className="container mx-auto">
         <h2 className="text-3xl lg:text-4xl font-medium mb-10 lg:mb-16 ">
           Govement Services & <br /> Important{" "}
           <span className="text-green-500">Laws/Notices</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {servicesData.map((service, index) => {
+          {servicesData.slice(0, cardShowQuantity).map((service, index) => {
             return (
               <div
                 key={index}
@@ -228,6 +234,30 @@ export default function GovementServices() {
               </div>
             );
           })}
+        </div>
+        <div className="flex lg:justify-end justify-center mt-6 mb-12 md:mt-12 lg:mb-0 lg:mt-16 ">
+          {cardShowQuantity <= 8 && (
+            <button
+              onClick={() => handleShowMore(servicesData.length)}
+              className="flex gap-3 items-center bg-green-500 hover:bg-green-600 py-2.5 px-10 rounded-md text-lg font-medium text-white transition duration-200"
+            >
+              <span>Show More</span>
+              <span className="relative top-[2px] text-2xl">
+                <FaArrowRightLong />
+              </span>
+            </button>
+          )}
+          {cardShowQuantity > 8 && (
+            <button
+              onClick={() => handleShowMore(8)}
+              className="flex gap-3 items-center bg-green-500 hover:bg-green-600 py-2.5 px-10 rounded-md text-lg font-medium text-white transition duration-200"
+            >
+              <span>Show Less</span>
+              <span className="relative top-[2px] text-2xl">
+                <FaArrowRightLong />
+              </span>
+            </button>
+          )}
         </div>
       </div>
     </section>

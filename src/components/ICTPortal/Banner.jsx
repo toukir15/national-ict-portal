@@ -1,6 +1,4 @@
 import { BsPinFill } from "react-icons/bs";
-import honorableAdviser from "/Honorable-Adviser.jpg";
-import honorableSecretary from "/Honorable-Secretary.jpg";
 import { useState } from "react";
 
 export default function Banner() {
@@ -24,32 +22,17 @@ export default function Banner() {
     setHoverActive(false);
   };
 
-  const officialsData = [
-    {
-      name: "Md. Nahid Islam",
-      degignation: "Honorable Adviser",
-      img: honorableAdviser,
-      imageWidth: 200,
-    },
-    {
-      name: "Md. Shamsul Arefin",
-      degignation: "Secretary",
-      img: honorableSecretary,
-      imageWidth: 208,
-    },
-  ];
-
   return (
     <div className="background-image min-h-[calc(100vh-200px)] relative">
-      <div>
-        <h2 className="text-center pt-20 text-4xl font-bold text-gray-800">
+      <div className="relative z-40 pt-16">
+        <h2 className="text-center  text-5xl font-bold text-white  ">
           ICT Division
         </h2>
-        <h4 className="text-center text-xl mt-4 text-gray-800">
+        <h4 className="text-center text-xl text-[#f3f3f3] mt-4">
           Government of the People&apos;s Republic of Bangladesh
         </h4>
       </div>
-      <div className="container mx-auto mt-12 md:mt-20 lg:mt-12 md:px-16 lg:px-0 flex gap-0 lg:gap-8 px-3">
+      <div className="container mx-auto mt-12 md:mt-20 lg:mt-20 md:px-16 lg:px-0 flex gap-0 lg:gap-8 px-3">
         {/* notice board  */}
         <div
           onMouseMove={(e) => hoverActive && handleMouseMove(e)}
@@ -61,7 +44,7 @@ export default function Banner() {
               : "none",
             transition: "background 0.2s ease",
           }}
-          className="bg-[#f3f4f6ec] notice  p-4 lg:p-8 w-full lg:w-[60%] rounded-lg "
+          className="bg-[#f3f4f6ec] notice  p-4 lg:p-8 w-full lg:w-[60%] rounded-lg relative z-40 "
         >
           <div className="flex items-center mb-2 justify-between">
             <h4 className="text-xl lg:text-3xl mb-4 font-medium flex gap-2 items-center">
@@ -94,31 +77,6 @@ export default function Banner() {
           </div>
         </div>
         <div className="flex gap-8"></div>
-      </div>
-      <div className="hidden lg:block">
-        <div className=" absolute bottom-5 right-20 flex gap-10">
-          {officialsData.map((official) => {
-            return (
-              <div
-                key={official.name}
-                className="w-fit border p-4 rounded bg-white"
-              >
-                <div>
-                  <img className={`w-[200px]`} src={official.img} alt="" />
-                </div>
-                <p className="text-center text-lg mt-1 font-medium">
-                  {official.name}
-                </p>
-                <p className="text-center text-gray-700">
-                  {official.degignation}
-                </p>
-                <button className="bg-green-500 hover:bg-green-600 transition duration-200 w-full py-1 rounded mt-2 text-white font-medium">
-                  More
-                </button>
-              </div>
-            );
-          })}
-        </div>
       </div>
     </div>
   );

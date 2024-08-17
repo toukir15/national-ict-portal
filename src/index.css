@@ -8,10 +8,22 @@
   background-size: cover; /* Change contain to cover */
   background-position: center;
 }
-
+.background-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.423);
+  z-index: 1;
+}
 .card {
   background-color: white !important;
 }
 .notice {
-  background-color: #f3f4f6cc !important;
+  background-color: #f3f4f6ed !important;
+}
+.important-link {
+  background-color: white !important;
 }

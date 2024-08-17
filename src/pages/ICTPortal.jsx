@@ -43,6 +43,7 @@ export default function ICTPortal() {
       <ImportantLink />
 
       <ImportantVideo />
+
       {/* footer  */}
       <Footer />
     </div>

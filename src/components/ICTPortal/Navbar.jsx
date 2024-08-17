@@ -200,13 +200,14 @@ export default function Navbar() {
         {/* Full Navbar for larger screens */}
         <div className="hidden lg:flex space-x-4">
           {navbarOptions.map((navbarOption, key) => (
-            <div key={key} className="relative">
+            <div
+              key={key}
+              className="relative"
+              onMouseEnter={() => setHoveredNavLink(navbarOption?.navLinkName)}
+              onMouseLeave={() => setHoveredNavLink(null)}
+            >
               <button
-                onMouseEnter={() =>
-                  setHoveredNavLink(navbarOption?.navLinkName)
-                }
-                onMouseLeave={() => setHoveredNavLink(null)}
-                className={`py-7  font-medium transition duration-150 text-white px-8 bg-[${navbarOption.buttonColor}] hover:bg-green-600`}
+                className={`py-7 font-medium transition duration-150 text-white px-8 bg-[${navbarOption.buttonColor}] hover:bg-green-600`}
               >
                 {navbarOption.navLinkName}
               </button>
@@ -217,7 +218,7 @@ export default function Navbar() {
                   setHoveredNavLink(navbarOption?.navLinkName)
                 }
                 onMouseLeave={() => setHoveredNavLink(null)}
-                className={`absolute left-0 top-full bg-white px-4 py-4 rounded-b-lg z-20 border-l-4 border-green-500 shadow-lg flex gap-6 ${
+                className={`absolute left-0 top-full bg-white px-4 py-4 rounded-b-lg z-50 border-l-4 border-green-500 shadow-lg flex gap-6  ${
                   navbarOption?.navLinkName === hoveredNavLink &&
                   navbarOption.nestedOptions
                     ? "block transition duration-500"
@@ -225,7 +226,14 @@ export default function Navbar() {
                 }`}
               >
                 {navbarOption.nestedOptions?.map((nestedOption, index) => (
-                  <div key={index} className="whitespace-nowrap">
+                  <div
+                    onMouseEnter={() =>
+                      setHoveredNavLink(navbarOption?.navLinkName)
+                    }
+                    onMouseLeave={() => setHoveredNavLink(null)}
+                    key={index}
+                    className="whitespace-nowrap relative"
+                  >
                     <h4 className="font-semibold">
                       {nestedOption.nestedOptionName}
                     </h4>
@@ -273,6 +281,9 @@ export default function Navbar() {
 
               {/* Dropdown Menu */}
               <div
+                onMouseEnter={() =>
+                  setHoveredNavLink(navbarOption?.navLinkName)
+                }
                 className={`${
                   hoveredNavLink === navbarOption?.navLinkName
                     ? "block"

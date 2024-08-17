@@ -49,7 +49,7 @@ export default function Contact() {
               <FaWhatsapp />
             </button>
           </div>
-          <div className="bg-gray-200 h-auto flex items-center px-4 gap-10">
+          <div className="bg-[#ff952b] h-auto flex items-center px-4 gap-10">
             <div>
               <h3 className="text-2xl font-medium mb-1">Wednesday</h3>
               <h6>14 Aug 2024</h6>
@@ -59,7 +59,7 @@ export default function Contact() {
                 <TiWeatherCloudy className="text-xl" />
                 <h3 className="text-xl font-medium">25 - 30 C</h3>
               </div>
-              <h6>24Hr PSI 54-59PSI</h6>
+              <h6 className="text-gray-800">24Hr PSI 54-59PSI</h6>
             </div>
           </div>
         </div>
